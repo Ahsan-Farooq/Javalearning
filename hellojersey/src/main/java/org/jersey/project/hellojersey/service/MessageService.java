@@ -23,7 +23,7 @@ public class MessageService {
 	
 	
 	public List<Message> getAllMessages() {
-		return new ArrayList<Message>(); 
+		return new ArrayList<Message>(messages.values()); 
 	}
 
 	
@@ -31,10 +31,10 @@ public class MessageService {
 		return messages.get(id);
 	}
 	
-	public Message addMessage(Message message) {
-		message.setId(messages.size() + 1);
-		messages.put(message.getId(), message);
-		return message;
+	public Message addMessage(Message messaged) {
+		messaged.setId(messages.size() + 1);
+		messages.put(messaged.getId(), messaged);
+		return messaged;
 	}
 	
 	public Message updateMessage(Message message) {
